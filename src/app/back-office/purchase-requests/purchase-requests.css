@@ -1,0 +1,26 @@
+.requests-container {
+  padding: 30px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+  white-space: nowrap;
+}
+
+th {
+  background: #172554;
+  color: white;
+}
+
+tbody tr:hover {
+  background: #f1f5f9;
+}

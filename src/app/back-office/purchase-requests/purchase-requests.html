@@ -1,0 +1,45 @@
+
+<div class="requests-container">
+
+  <h1>Demandes d'achat des clients</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Client</th>
+        <th>Email</th>
+        <th>Téléphone client</th>
+        <th>Adresse</th>
+        <th>Produit</th>
+        <th>Prix</th>
+        <th>Quantité</th>
+        <th>Date</th>
+        <th>Statut</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (demande of demandes(); track demande.id) {
+        <tr>
+          <td>{{ demande.id }}</td>
+          <td>{{ demande.nomClient }}</td>
+          <td>{{ demande.emailClient }}</td>
+          <td>{{ demande.telephoneClient }}</td>
+          <td>{{ demande.adresseClient }}</td>
+          <td>{{ demande.nomTelephone }}</td>
+          <td>{{ demande.prix }} DT</td>
+          <td>{{ demande.quantite }}</td>
+          <td>{{ demande.date }}</td>
+          <td>{{ demande.statut }}</td>
+        </tr>
+      }
+
+      @if (demandes().length === 0) {
+        <tr>
+          <td colspan="10">Aucune demande trouvée.</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

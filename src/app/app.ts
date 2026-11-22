@@ -1,12 +1,42 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
+import { Navbar } from './front-office/navbar/navbar';
+import { AdminNavbar } from './back-office/admin-navbar/admin-navbar';
+import { filter } from 'rxjs';
+import { Footer } from './front-office/footer/footer';
 
 @Component({
-  imports: [RouterOutlet],
   selector: 'app-root',
-  styleUrl: './app.css',
-  templateUrl: './app.html',
+  standalone: true,
+  imports: [RouterOutlet, Navbar, AdminNavbar,Footer],
+  template: `
+    @if (isAdmin && !isLogin) {
+      <app-admin-navbar />
+    } @else {
+      <app-navbar />
+    }
+    <main class="page-content">
+      <router-outlet />
+    </main>
+    @if (!isLogin && !isAdmin) {
+      <app-footer />
+    }
+  `,
+  styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('mini-projet');
+
+  router = inject(Router);
+  isAdmin = false;
+  isLogin = false;
+
+  constructor() {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        const url = this.router.url.split('?')[0];
+        this.isLogin = url === '/login';
+        this.isAdmin = url.startsWith('/admin') && !this.isLogin;
+      });
+  }
 }

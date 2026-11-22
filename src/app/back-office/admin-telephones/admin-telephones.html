@@ -1,0 +1,67 @@
+<div class="admin-container">
+
+  <div class="page-header">
+    <div>
+      <h1>Gestion des téléphones</h1>
+      <p>Consulter et gérer les téléphones disponibles.</p>
+    </div>
+
+    <a routerLink="/admin/add-telephone" class="add-btn">+ Ajouter un téléphone</a>
+  </div>
+
+  <div class="search-container">
+    <input type="text" placeholder="Rechercher par nom, marque ou modele..." (input)="recherche.set($any($event.target).value)">
+  </div>
+
+  @if (telephoneService.erreur()) {
+  <p>{{ telephoneService.erreur() }}</p>
+  }
+  @else if (telephonesFiltres().length === 0) {
+  <p>Aucun téléphone trouvé.</p>
+  }
+  @else {
+  <table>
+    <thead>
+      <tr>
+        <th>Photo</th>
+        <th>Nom</th>
+        <th>Marque</th>
+        <th>Modèle</th>
+        <th>Prix</th>
+        <th>Disponibilité</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (tel of telephonesFiltres(); track tel.id) {
+      <tr>
+        <td>
+          <img [src]="tel.photo" [alt]="tel.nom" width="60">
+        </td>
+
+        <td>{{ tel.nom }}</td>
+        <td>{{ tel.marque }}</td>
+        <td>{{ tel.modele }}</td>
+        <td>{{ tel.prix }} DT</td>
+
+        <td>
+          {{ tel.disponible ? 'Disponible' : 'Indisponible' }}
+        </td>
+
+        <td>
+          <a class="edit-btn" [routerLink]="['/admin/edit-telephone', tel.id]">
+            Modifier
+          </a>
+
+          <button class="delete-btn" (click)="supprimerTelephone(tel.id)">
+            Supprimer
+          </button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  }
+
+</div>

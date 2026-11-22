@@ -1,0 +1,221 @@
+{
+  "telephones": [
+    {
+      "id": "1",
+      "nom": "iPhone 16",
+      "marque": "Apple",
+      "modele": "16",
+      "photo": "images/iphone16.png",
+      "prix": 3499,
+      "disponible": true,
+      "dateAjout": "2026-01-10T00:00:00.000Z",
+      "commentaires": [
+        {
+          "nom": "Ahmed",
+          "message": "Excellent téléphone"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "nom": "Samsung Galaxy S25",
+      "marque": "Samsung",
+      "modele": "S25",
+      "photo": "images/s25.jpg",
+      "prix": 3200,
+      "disponible": true,
+      "dateAjout": "2026-01-15T00:00:00.000Z",
+      "commentaires": [
+        {
+          "nom": "Ali",
+          "message": "Très bonne qualité"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "nom": "Xiaomi Redmi Note 14",
+      "marque": "Xiaomi",
+      "modele": "Redmi Note 14",
+      "photo": "images/redmi14.jpg",
+      "prix": 900,
+      "disponible": true,
+      "dateAjout": "2026-02-01",
+      "commentaires": []
+    },
+    {
+      "id": "4",
+      "nom": "iPhone 15",
+      "marque": "Apple",
+      "modele": "15",
+      "photo": "images/iphone15.jpg",
+      "prix": 2800,
+      "disponible": false,
+      "dateAjout": "2026-02-05",
+      "commentaires": []
+    },
+    {
+      "id": "5",
+      "nom": "iPhone 13 Pro",
+      "marque": "Apple",
+      "modele": "13 Pro",
+      "photo": "images/iphone13pro.jpg",
+      "prix": 2100,
+      "disponible": false,
+      "dateAjout": "2026-01-20",
+      "commentaires": []
+    },
+    {
+      "id": "6",
+      "nom": "Oppo Reno 11",
+      "marque": "Oppo",
+      "modele": "Reno 11",
+      "photo": "images/oppo-reno11.jpg",
+      "prix": 1200,
+      "disponible": true,
+      "dateAjout": "2026-01-22",
+      "commentaires": []
+    },
+    {
+      "id": "7",
+      "nom": "Google Pixel 8",
+      "marque": "Google",
+      "modele": "Pixel 8",
+      "photo": "images/pixel8.jpg",
+      "prix": 1900,
+      "disponible": true,
+      "dateAjout": "2026-01-25",
+      "commentaires": []
+    },
+    {
+      "id": "8",
+      "nom": "OnePlus 12",
+      "marque": "OnePlus",
+      "modele": "12",
+      "photo": "images/oneplus12.png",
+      "prix": 2800,
+      "disponible": false,
+      "dateAjout": "2026-01-28",
+      "commentaires": []
+    },
+    {
+      "id": "9",
+      "nom": "Samsung Galaxy A55",
+      "marque": "Samsung",
+      "modele": "A55",
+      "photo": "images/a55.jpg",
+      "prix": 1450,
+      "disponible": true,
+      "dateAjout": "2026-02-10",
+      "commentaires": []
+    },
+    {
+      "id": "10",
+      "nom": "Google Pixel 9 Pro",
+      "marque": "Google",
+      "modele": "9 Pro",
+      "photo": "images/pixel9pro.jpg",
+      "prix": 3100,
+      "disponible": true,
+      "dateAjout": "2026-02-12",
+      "commentaires": []
+    },
+    {
+      "id": "11",
+      "nom": "iPhone 14 Pro Max",
+      "marque": "Apple",
+      "modele": "14 Pro Max",
+      "photo": "images/iphone14promax.jpg",
+      "prix": 2600,
+      "disponible": false,
+      "dateAjout": "2026-02-15",
+      "commentaires": []
+    },
+    {
+      "id": "12",
+      "nom": "Samsung Galaxy Z Flip 6",
+      "marque": "Samsung",
+      "modele": "Z Flip 6",
+      "photo": "images/zflip6.jpg",
+      "prix": 2800,
+      "disponible": true,
+      "dateAjout": "2026-02-18T00:00:00.000Z",
+      "commentaires": []
+    }
+  ],
+  "administrateurs": [
+    {
+      "id": "1",
+      "email": "admin@techphone.com",
+      "motDePasse": "admin123"
+    }
+  ],
+  "demandes": [
+    {
+      "id": "iQogV7Vc_As",
+      "nomClient": "Adem Hamrouni",
+      "emailClient": "hmadem39@gmail.com",
+      "telephoneClient": "58654225",
+      "adresseClient": "Carthage",
+      "telephoneId": "1",
+      "nomTelephone": "iPhone 16",
+      "prix": 3499,
+      "quantite": 1,
+      "date": "2026-11-14",
+      "statut": "En attente"
+    },
+    {
+      "id": "2vfo61lojl8",
+      "nomClient": "aziz hamrouni",
+      "emailClient": "aziz112@gmail.com",
+      "telephoneClient": "29033708",
+      "adresseClient": "Carthage,byrsa",
+      "telephoneId": "12",
+      "nomTelephone": "Samsung Galaxy Z Flip 6",
+      "prix": 2800,
+      "quantite": 1,
+      "date": "2026-11-14",
+      "statut": "En attente"
+    },
+    {
+      "id": "-Z9C7eooc3k",
+      "nomClient": "Adem Hamrouni",
+      "emailClient": "hmadem39@gmail.com",
+      "telephoneClient": "58654225",
+      "adresseClient": "CarthageEEGRG",
+      "telephoneId": "2",
+      "nomTelephone": "Samsung Galaxy S25",
+      "prix": 3200,
+      "quantite": 2,
+      "date": "2026-11-22",
+      "statut": "En attente"
+    },
+    {
+      "id": "BiPSr-tp9-A",
+      "nomClient": "aziz hamrouni",
+      "emailClient": "aziz1232@gmail.com",
+      "telephoneClient": "9865454",
+      "adresseClient": "MARSAA",
+      "telephoneId": "2",
+      "nomTelephone": "Samsung Galaxy S25",
+      "prix": 3200,
+      "quantite": 2,
+      "date": "2026-11-22",
+      "statut": "En attente"
+    },
+    {
+      "id": "5iM53e32f1g",
+      "nomClient": "yassmine hamrouni",
+      "emailClient": "hamyass@gmail.com",
+      "telephoneClient": "58654056",
+      "adresseClient": "CARTHAGE",
+      "telephoneId": "1",
+      "nomTelephone": "iPhone 16",
+      "prix": 3499,
+      "quantite": 1,
+      "date": "2026-11-22",
+      "statut": "En attente"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

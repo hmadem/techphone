@@ -1,0 +1,70 @@
+<section class="compare-container">
+  <h1>Compare Smartphones</h1>
+
+  <p class="subtitle">
+    Select smartphones to compare their characteristics and prices.
+  </p>
+  <h2>Select your phones</h2>
+  <div class="phone-selection">
+    @for (tel of service.telephones(); track tel.id) {
+
+      <div class="phone-option">
+        <img [src]="tel.photo" [alt]="tel.nom">
+        <h3>{{ tel.nom }}</h3>
+        <p>{{ tel.prix }} DT</p>
+        <button (click)="gererSelectionTelephone(tel.id)" [class.selected]="isSelected(tel.id)">
+        {{ isSelected(tel.id)? 'Remove' : 'Compare' }}
+        </button>
+      </div>
+    }
+  </div>
+
+  @if (selectedTelephones().length > 1) {
+
+    <h2>Comparison Table</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Characteristics</th>
+            @for (tel of selectedTelephones(); track tel.id) {
+              <th>{{ tel.nom }}</th>
+            }
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Brand</td>
+            @for (tel of selectedTelephones(); track tel.id) {
+              <td>{{ tel.marque }}</td>
+            }
+          </tr>
+          <tr>
+            <td>Model</td>
+            @for (tel of selectedTelephones(); track tel.id) {
+              <td>{{ tel.modele }}</td>
+            }
+          </tr>
+          <tr>
+            <td>Price</td>
+            @for (tel of selectedTelephones(); track tel.id) {
+              <td class="price">{{ tel.prix }} DT</td>
+            }
+          </tr>
+          <tr>
+            <td>Availability</td>
+            @for (tel of selectedTelephones(); track tel.id) {
+              <td>
+                {{ tel.disponible ? 'Available' : 'Unavailable' }}
+              </td>
+            }
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  } @else {
+
+    <p class="empty-message">Select at least two smartphone to start.</p>
+  }
+</section>

@@ -1,0 +1,14 @@
+<div class="product-card">
+  <img [src]="telephone().photo" [alt]="telephone().nom">
+  <div class="product-info">
+    <h3>{{ telephone().nom }}</h3>
+    <p>{{ telephone().marque }}</p>
+    <h4>{{ telephone().prix }} DT</h4>
+    <a [routerLink]="['/product/', telephone().id]"class="details-btn">Voir détails</a>
+    <br>
+    <br>
+    <span [class.available]="telephone().disponible" [class.unavailable]="!telephone().disponible">
+      {{ telephone().disponible ? 'Disponible' : 'Indisponible' }}
+    </span>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="form-container">
+
+  <div class="form-header">
+    <h1>Edit Telephone</h1>
+    <p>Update the information of this smartphone.</p>
+  </div>
+
+  @if (telephoneOriginal()) {
+  <form (submit)="modifierTelephone($event)">
+
+    <div class="form-group">
+      <label>Telephone Name</label>
+      <input type="text" [formField]="telephoneForm.nom">
+    </div>
+
+    <div class="form-group">
+      <label>Brand</label>
+      <select [formField]="telephoneForm.marque">
+        <option value="">Select Brand</option>
+        <option value="Apple">Apple</option>
+        <option value="Samsung">Samsung</option>
+        <option value="Xiaomi">Xiaomi</option>
+        <option value="Huawei">Huawei</option>
+        <option value="Oppo">Oppo</option>
+        <option value="Google">Google</option>
+        <option value="OnePlus">OnePlus</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Model</label>
+      <input type="text" [formField]="telephoneForm.modele">
+    </div>
+
+    <div class="form-group">
+      <label>Price (DT)</label>
+      <input type="number" [formField]="telephoneForm.prix">
+    </div>
+
+    <div class="form-group">
+      <label>Telephone Image</label>
+      <input type="text" [formField]="telephoneForm.photo">
+    </div>
+
+    <div class="form-group">
+      <label>Availability</label>
+      <input type="checkbox" [formField]="telephoneForm.disponible">
+      <span>Available</span>
+    </div>
+
+    <div class="form-group">
+      <label>Adding Date</label>
+      <input type="date" [formField]="telephoneForm.dateAjout">
+    </div>
+
+    <div class="form-buttons">
+      <button type="submit" class="submit-btn">Save Changes</button>
+
+      <button type="button" class="reset-btn" (click)="router.navigate(['/admin/telephones'])">Cancel</button>
+    </div>
+
+  </form>
+  }
+</div>

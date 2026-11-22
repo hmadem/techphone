@@ -1,0 +1,75 @@
+@if (telephone(); as tel) {
+
+<div class="detail-container">
+
+  <div class="detail-image">
+    <img [src]="tel.photo" [alt]="tel.nom">
+  </div>
+
+  <div class="detail-info">
+    <h1>{{ tel.nom }}</h1>
+    <p><strong>Marque :</strong> {{ tel.marque }}</p>
+    <p><strong>Modèle :</strong> {{ tel.modele }}</p>
+    <h2>{{ tel.prix }} DT</h2>
+
+    <p>
+      <strong>Disponibilité :</strong>
+      {{ tel.disponible ? 'Disponible' : 'Indisponible' }}
+    </p>
+
+    <p>
+      <strong>Date d'ajout :</strong>
+      {{ tel.dateAjout | date:'dd/MM/yyyy' }}
+    </p>
+
+    <h3>Commentaires</h3>
+
+    @for (com of tel.commentaires; track $index) {
+    <div class="comment">
+      <strong>{{ com.nom }}</strong>
+      <p>{{ com.message }}</p>
+    </div>
+    }
+    @if (tel.commentaires.length === 0) {
+    <p>Aucun commentaire.</p>
+    }
+
+    @if (tel.disponible) {
+    <button class="commander-btn" (click)="ouvrirFormulaire()">Commander</button>
+    }
+
+    @if (afficherFormulaire()) {
+    <div class="commande-form">
+      <h2>Formulaire de commande</h2>
+      <p>Produit : {{ tel.nom }}</p>
+      <p>Prix : {{ tel.prix }} DT</p>
+
+
+      <form (ngSubmit)="commander()">
+
+        <label>Nom et prénom</label>
+        <input type="text" [formField]="commandeForm.nomClient">
+
+        <label>Email</label>
+        <input type="email" [formField]="commandeForm.emailClient">
+
+        <label>Numéro de téléphone</label>
+        <input type="tel" [formField]="commandeForm.telephoneClient">
+
+        <label>Adresse</label>
+        <input type="text" [formField]="commandeForm.adresseClient">
+
+        <label>Quantité</label>
+        <input type="number" [formField]="commandeForm.quantite">
+        <button type="submit">Confirmer la commande</button>
+        <button type="button" (click)="afficherFormulaire.set(false)">Annuler</button>
+      </form>
+
+    </div>
+    }
+  </div>
+</div>
+
+} @else {
+<h2>Téléphone introuvable.</h2>
+}

@@ -1,0 +1,25 @@
+<section class="products">
+
+  <h1>Our Smartphones</h1>
+  <p>Discover our latest smartphones</p>
+  <div class="search-container">
+    <div class="search-group">
+      <label>Search by name or brand</label>
+      <input type="text" placeholder="Ex: iPhone, Samsung..."  [value]="nomRecherche()" (input)="rechercherNom($any($event.target).value)">
+    </div>
+
+    <div class="search-group">
+      <label>Maximum price (DT)</label>
+      <input type="number" min="0" placeholder="Ex: 2000"    [value]="prixMaximum() ?? '' " (input)="rechercherPrix($any($event.target).value)">
+    </div>
+    <button class="reset-btn" (click)="reinitialiserRecherche()"> Reset</button>
+  </div>
+
+  <p class="results-count">Nombre de téléphones : {{ telephonesFiltres().length }}</p>
+
+  <div class="products-container">
+    @for (tel of telephonesFiltres(); track tel.id) {
+      <app-product-card [telephone]="tel" />
+    } 
+  </div>
+</section>

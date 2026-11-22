@@ -1,0 +1,62 @@
+<div class="form-container">
+
+  <div class="form-header">
+    <h1>Add New Telephone</h1>
+    <p>Fill in the information to add a new smartphone.</p>
+  </div>
+
+  <form (submit)="ajouterTelephone($event)">
+
+    <div class="form-group">
+      <label>Telephone Name</label>
+      <input type="text" placeholder="Example: iPhone 16" [formField]="telephoneForm.nom">
+    </div>
+
+    <div class="form-group">
+      <label>Brand</label>
+      <select [formField]="telephoneForm.marque">
+        <option value="">Select Brand</option>
+        <option value="Apple">Apple</option>
+        <option value="Samsung">Samsung</option>
+        <option value="Xiaomi">Xiaomi</option>
+        <option value="Huawei">Huawei</option>
+        <option value="Oppo">Oppo</option>
+        <option value="Google">Google</option>
+        <option value="OnePlus">OnePlus</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Model</label>
+      <input type="text" placeholder="Example: 16 Pro Max" [formField]="telephoneForm.modele">
+    </div>
+
+    <div class="form-group">
+      <label>Price (DT)</label>
+      <input type="number" placeholder="Enter price" [formField]="telephoneForm.prix">
+    </div>
+
+    <div class="form-group">
+      <label>Telephone Image</label>
+      <input type="text" placeholder="Example: images/iphone16.jpg" [formField]="telephoneForm.photo">
+    </div>
+
+    <div class="form-group">
+      <label>Availability</label>
+      <input type="checkbox" [formField]="telephoneForm.disponible">
+      <span>Available</span>
+    </div>
+
+    <div class="form-group">
+      <label>Adding Date</label>
+      <input type="date" [formField]="telephoneForm.dateAjout">
+    </div>
+
+    <div class="form-buttons">
+      <button type="submit" class="submit-btn">Add Telephone</button>
+
+      <button type="reset" class="reset-btn">Reset</button>
+    </div>
+
+  </form>
+</div>
